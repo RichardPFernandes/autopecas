@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Header.css'; // Importa o CSS específico para o Header
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = ({ cartCount, user }) => {
   return (
@@ -10,11 +10,13 @@ const Header = ({ cartCount, user }) => {
       </div>
       <nav>
         <Link to="/">Produtos</Link>
-        {user ? (
-          <Link to="/cart">Carrinho ({cartCount})</Link>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
+        <button className="button-nav">
+          {user ? (
+            <Link to="/cart">Carrinho ({cartCount})</Link>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </button>
       </nav>
     </header>
   );
