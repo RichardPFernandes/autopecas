@@ -13,7 +13,7 @@ function App() {
     useEffect(() => {
       const storedUser = localStorage.getItem("usuario");
       if (storedUser) {
-        setUser(JSON.parse(storedUser)); // Recupera o usuário do localStorage
+        setUser(JSON.parse(storedUser)); 
       }
       user;
     }, []);

@@ -7,7 +7,7 @@ const SortFilter = ({ onSortChange }) => {
   const handleSortChange = (event) => {
     const selectedSort = event.target.value;
     setSort(selectedSort);
-    onSortChange(selectedSort); // Passa o tipo de ordenação para o componente pai
+    onSortChange(selectedSort); 
   };
 
   return (

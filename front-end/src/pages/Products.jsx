@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Products = ({ addToCart }) => {
   const [filter, setFilter] = useState("");
-  const [sort, setSort] = useState(""); // Estado para armazenar a ordenação
+  const [sort, setSort] = useState(""); 
   const [search, setSearch] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [products, setProducts] = useState([]);
@@ -15,13 +15,12 @@ const Products = ({ addToCart }) => {
     setSearch(searchQuery);
   };
 
-  // Lógica para ordenar os produtos
   const sortedProducts = () => {
-    let sorted = [...products]; // Faz uma cópia dos produtos
+    let sorted = [...products]; 
     if (sort === "asc") {
-      sorted.sort((a, b) => a.preco - b.preco); // Ordenação por menor preço
+      sorted.sort((a, b) => a.preco - b.preco); 
     } else if (sort === "desc") {
-      sorted.sort((a, b) => b.preco - a.preco); // Ordenação por maior preço
+      sorted.sort((a, b) => b.preco - a.preco); 
     }
     return sorted;
   };
@@ -33,11 +32,11 @@ const Products = ({ addToCart }) => {
     );
 
   const handleSortChange = (sortOption) => {
-    setSort(sortOption); // Atualiza o estado de ordenação
+    setSort(sortOption); 
   };
 
   useEffect(() => {
-    fetch("http://localhost:8081/api/produto") // A URL do endpoint no Spring Boot
+    fetch("http://localhost:8081/api/produto") 
       .then((response) => {
         if (!response.ok) {
           throw new Error("Falha ao carregar os produtos");

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PaymentModal.css"; // Arquivo CSS do Modal
+import "./PaymentModal.css"; 
 import { FaPix } from "react-icons/fa6";
 import { MdOutlinePayment } from "react-icons/md";
 import { FaMoneyBill } from "react-icons/fa";
@@ -9,8 +9,8 @@ const PaymentModal = ({ showModal, handleClose, handlePayment }) => {
 
   const handleSubmit = () => {
     if (paymentMethod) {
-      handlePayment(paymentMethod); // Passa a forma de pagamento para o componente pai
-      handleClose(); // Fecha o modal após a escolha
+      handlePayment(paymentMethod);
+      handleClose();
     } else {
       alert("Selecione uma forma de pagamento.");
     }

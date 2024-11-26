@@ -15,10 +15,8 @@ public class ProdutoInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        // Verifica se já existem produtos no banco
         if (produtoRepository.count() == 0) {
 
-            // Lista de peças automotivas com dados de exemplo e URLs reais de imagens
             List<Produto> produtos = List.of(
                     new Produto("Filtro de Óleo", "Filtro de óleo de alta performance para motores a gasolina e diesel.", 35.99, "https://www.autobest.co.in/wp-content/uploads/2020/06/Oil-Filter.jpg"),
                     new Produto("Amortecedor", "Amortecedor dianteiro para carros de passeio, modelo universal.", 150.75, "https://www.shockwarehouse.com/images/products/monroe-amortecedor.jpg"),

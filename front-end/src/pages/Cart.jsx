@@ -44,7 +44,7 @@ const Cart = ({ cart, removeFromCart, clearCart }) => {
                         {item.quantity ? item.quantity + "x" : "1x"}
                       </span>
                       <span
-                        onClick={() => removeItem(item.id)} // Passa o id do item para a função de remoção
+                        onClick={() => removeItem(item.id)} 
                         style={{
                           color: "red",
                           marginLeft: "20px",

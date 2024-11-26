@@ -3,7 +3,7 @@ import "./ProductCard.css";
 import { FaCartPlus } from "react-icons/fa";
 
 const ProductCard = ({ product, onAddToCart }) => {
-  const [quantity, setQuantity] = useState(1); // Estado para quantidade
+  const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => {
@@ -11,7 +11,7 @@ const ProductCard = ({ product, onAddToCart }) => {
   };
 
   const handleAddToCart = () => {
-    onAddToCart({ ...product, quantity }); // Passa o produto com a quantidade
+    onAddToCart({ ...product, quantity }); 
   };
 
   return (
