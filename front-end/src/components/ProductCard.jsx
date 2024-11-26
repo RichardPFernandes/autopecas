@@ -16,11 +16,11 @@ const ProductCard = ({ product, onAddToCart }) => {
 
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.name} />
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
+      <img src={product.imageUrl} alt={product.nome} />
+      <h3>{product.nome}</h3>
+      <p>{product.descricao}</p>
       <p>
-        <strong>R$ {product.price.toFixed(2)}</strong>
+        <strong>R$ {product.preco.toFixed(2)}</strong>
       </p>
       <div className="card-footer">
         <div className="quantity-controls">

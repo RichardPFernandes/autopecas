@@ -7,45 +7,42 @@ import Header from './components/Header';
 import Signup from './pages/Signup';
 
 function App() {
-  const [user, setUser] = useState(null); 
-  const [cart, setCart] = useState([
-    {
-      id: 4,
-      name: "Produto 4",
-      description: "Descrição do Produto 4",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      category: "Eletrônicos",
-    },
-    {
-      id: 5,
-      name: "Produto 5",
-      description: "Descrição do Produto 5",
-      quantity: 2,
-      price: 15,
-      image: "https://via.placeholder.com/150",
-      category: "Roupas",
-    },]);
+  const [user, setUser] = useState(); 
+  const [cart, setCart] = useState([]);
+  
+    useEffect(() => {
+      const storedUser = localStorage.getItem("usuario");
+      if (storedUser) {
+        setUser(JSON.parse(storedUser)); // Recupera o usuário do localStorage
+      }
+      user;
+    }, []);
 
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
   };
 
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+  };
+
+  const clearCart = () => {
+    setCart([]); 
+  };
 
   return (
     <div>
-    <Header cartCount={cart.length} />
-    <Routes>
-      <Route path="/" element={<Products addToCart={addToCart} />} />
-      <Route path="/login" element={<Login onLogin={setUser} />} />
-      <Route
+      <Header cartCount={cart.length} user={user} />
+      <Routes>
+        <Route path="/" element={<Products addToCart={addToCart} />} />
+        <Route path="/login" element={<Login />} />
+        <Route
           path="/cart"
-          // element={user ? <Cart cart={cart} /> : <Navigate to="/login" />}
-          element={<Cart cart={cart} />}
+          element={user ? <Cart cart={cart} clearCart={clearCart} removeFromCart={removeFromCart} /> : <Navigate to="/login" />}
         />
         <Route path="/signup" element={<Signup />} />
-    </Routes>
-  </div>
+      </Routes>
+    </div>
   );
 }
 
