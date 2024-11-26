@@ -21,6 +21,7 @@ function App() {
       id: 5,
       name: "Produto 5",
       description: "Descrição do Produto 5",
+      quantity: 2,
       price: 15,
       image: "https://via.placeholder.com/150",
       category: "Roupas",

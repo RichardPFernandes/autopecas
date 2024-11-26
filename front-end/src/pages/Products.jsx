@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import "./Products.css";
+import SortFilter from "../components/SortField";
+import { FaSearch } from "react-icons/fa";
 
 const mockProducts = [
   {
@@ -19,9 +21,11 @@ const mockProducts = [
   },
   {
     id: 3,
-    name: "Produto 3",
+    name: "Alternador",
     price: 20,
-    image: "https://via.placeholder.com/150",
+    description: "Marca",
+    image:
+      "https://pecahoje.vteximg.com.br/arquivos/ids/174846-1000-1000/alternador-0098-chery-face-v5-c1.jpg?v=637934215050100000",
     category: "Livros",
   },
   {
@@ -100,8 +104,9 @@ const Products = ({ addToCart }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button onClick={handleSearch}>Buscar</button>
+          <button onClick={handleSearch}><FaSearch /></button>
         </div>
+        <SortFilter />
       </div>
 
       <div className="products-container">

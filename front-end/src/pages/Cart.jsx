@@ -19,6 +19,7 @@ const Cart = ({ cart }) => {
                     <span className="cart-item-name">{item.name}</span>
                     <span className="cart-item-price">
                       R${item.price.toFixed(2)}
+                      <span className="quantity">{item.quantity ? item.quantity + "x" : "1x"}</span>
                     </span>
                   </div>
                 </li>

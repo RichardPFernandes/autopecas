@@ -6,7 +6,7 @@ const Header = ({ cartCount, user }) => {
   return (
     <header>
       <div>
-        <Link to="/">🛒 Minha Loja</Link>
+        <Link to="/">Retro Auto Peças</Link>
       </div>
       <nav>
         <Link to="/">Produtos</Link>

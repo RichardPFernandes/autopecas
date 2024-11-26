@@ -3,7 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 2rem;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background-color: #583500;
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
