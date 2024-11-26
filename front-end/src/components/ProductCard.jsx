@@ -16,7 +16,7 @@ const ProductCard = ({ product, onAddToCart }) => {
 
   return (
     <div className="product-card">
-      <img src={product.imageUrl} alt={product.nome} />
+      <img src={product.imagemUrl} alt={product.nome} />
       <h3>{product.nome}</h3>
       <p>{product.descricao}</p>
       <p>
